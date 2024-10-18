@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vacaciones', function (Blueprint $table) {
+        Schema::create('entregas', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('lloc');
-            $table->date('data');
-            $table->enum('tipus', ['Restaurant', 'Esport', 'Cultural', 'Visita', 'Altres']);
+            $table->enum('sprint', ['HTML i PHP', 'Bases de dades', 'Patrons', 'Laravel MVC', 'Laravel API']);
+            $table->date('data_entrega');
+            $table->string('link_github');
+            $table->text('comentaris')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vacaciones');
+        Schema::dropIfExists('entregas');
     }
 };
