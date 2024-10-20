@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('entregas', function (Blueprint $table) {
+        Schema::create('entrega_it_academies', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->enum('sprint', ['HTML i PHP', 'Bases de dades', 'Patrons', 'Laravel MVC', 'Laravel API']);
+            $table->string('nom_entrega');
+            $table->string('sprint'); // Aquí puedes definir los diferentes sprints como opciones
             $table->date('data_entrega');
             $table->string('link_github');
             $table->text('comentaris')->nullable();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('entregas');
+        Schema::dropIfExists('entrega_it_academies');
     }
 };
