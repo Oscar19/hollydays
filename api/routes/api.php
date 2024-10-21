@@ -11,7 +11,8 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/pla-vacacional', [PlaVacacionalController::class, 'store']);
 Route::post('/entrega-it-academy', [EntregaItAcademyController::class, 'store']);
-
+Route::get('/pla-vacacional', [PlaVacacionalController::class, 'index']);
+Route::get('/entrega-it-academy', [EntregaItAcademyController::class, 'index']);
 Route::post('/pla-vacacional/{id}/realitzar', [PlaVacacionalController::class, 'realitzar']);
 Route::delete('/pla-vacacional/{id}/anular', [PlaVacacionalController::class, 'anular']);
 Route::post('/entrega-it-academy/{id}/entregar', [EntregaItAcademyController::class, 'entregar']);

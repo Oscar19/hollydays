@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class EntregaItAcademyController extends Controller
 {
+    public function index()
+    {
+      
+        $plans = EntregaItAcademy::all();
+
+        return response()->json([
+            'message' => 'Llistat de entregues',
+            'plans' => $plans
+        ], 200);
+    }
     public function store(Request $request)
     {
         $request->validate([

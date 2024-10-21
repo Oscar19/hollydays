@@ -7,6 +7,16 @@ use App\Models\plaVacacional;
 
 class PlaVacacionalController extends Controller
 {
+    public function index()
+    {
+       
+        $plans = PlaVacacional::all();
+
+        return response()->json([
+            'message' => 'Llistat de plans vacacionals',
+            'plans' => $plans
+        ], 200);
+    }
     public function store(Request $request)
     {
         $request->validate([
