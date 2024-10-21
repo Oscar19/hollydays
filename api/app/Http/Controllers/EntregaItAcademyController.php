@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\EntregaItAcademy;
 
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class EntregaItAcademyController extends Controller
             'comentaris' => 'nullable|string'
         ]);
 
-        $entrega = entregaItAcademy::create($request->all());
+        $entrega = EntregaItAcademy::create($request->all());
 
         return response()->json([
             'message' => 'Entrega creada amb èxit!',
@@ -25,13 +26,13 @@ class EntregaItAcademyController extends Controller
         ], 201);
     }
     public function entregar($id) {
-        $entrega = entregaItAcademy::findOrFail($id);
+        $entrega = EntregaItAcademy::findOrFail($id);
         return response()->json(['message' => "Entrega realitzada: " . $entrega->nom]);
     }
     
     public function reentregar($id) {
-        $entrega = entregaItAcademy::findOrFail($id);
+        $entrega = EntregaItAcademy::findOrFail($id);
      
-        return response()->json(['message' => "Entrega reentregada: " . $entrega->nom]);
+        return response()->json(['message' => "Reentregat: " . $entrega->nom]);
     }
 }

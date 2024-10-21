@@ -25,12 +25,12 @@ class PlaVacacionalController extends Controller
     }
     public function realitzar($id) {
         $pla = PlaVacacional::findOrFail($id);
-        return response()->json(['message' => "Activitat realitzada: " . $pla->nom]);
+        return response()->json(['message' => "Actividat realitzada: " . $pla->nom]);
     }
     
     public function anular($id) {
         $pla = PlaVacacional::findOrFail($id);
         $pla->delete(); 
-        return response()->json(['message' => "Pla vacacional anul·lat: " . $pla->nom]);
+        return response()->json(['message' => "Pla vacacional anulat: " . $pla->nom]);
     }
 }
