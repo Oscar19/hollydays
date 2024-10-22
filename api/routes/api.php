@@ -9,8 +9,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::post('/pla-vacacional', [PlaVacacionalController::class, 'store']);
-Route::post('/entrega-it-academy', [EntregaItAcademyController::class, 'store']);
+Route::post('/pla-vacacional', [PlaVacacionalController::class, 'crear']);
+Route::post('/entrega-it-academy', [EntregaItAcademyController::class, 'crear']);
 Route::get('/pla-vacacional', [PlaVacacionalController::class, 'index']);
 Route::get('/entrega-it-academy', [EntregaItAcademyController::class, 'index']);
 Route::post('/pla-vacacional/{id}/realitzar', [PlaVacacionalController::class, 'realitzar']);

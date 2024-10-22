@@ -17,7 +17,7 @@ class PlaVacacionalController extends Controller
             'plans' => $plans
         ], 200);
     }
-    public function store(Request $request)
+    public function crear(Request $request)
     {
         $request->validate([
             'nom' => 'required|string',
